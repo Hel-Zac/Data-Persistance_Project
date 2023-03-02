@@ -5,5 +5,6 @@ using UnityEngine;
 public static class SavedData
 {
     public static string name;
-    public static int bestScore;
+    public static string nameBest;
+    public static int bestScore = 0;
 }

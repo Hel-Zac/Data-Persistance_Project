@@ -12,6 +12,8 @@ public class MainManager : MonoBehaviour
 
     public Text ScoreText;
     public GameObject GameOverText;
+
+    public BestScore bestScore;
     
     private bool m_Started = false;
     private int m_Points;
@@ -72,5 +74,11 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        if(SavedData.bestScore == 0 || m_Points > SavedData.bestScore)
+        {
+            SavedData.bestScore = m_Points;
+            SavedData.nameBest = SavedData.name;
+            bestScore.Actualise();
+        }
     }
 }

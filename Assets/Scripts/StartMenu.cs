@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class StartMenu : MonoBehaviour
 {
-    public void EnterName()
-    { }
+    [SerializeField] TMP_InputField playerName;
+
     public void GoToGame()
     {
-        SceneManager.LoadScene("main");
+        if (playerName.text != "")
+        {
+            SavedData.name = playerName.text;
+            SceneManager.LoadScene("main");
+        }
     }
 }
