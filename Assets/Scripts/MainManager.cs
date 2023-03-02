@@ -79,6 +79,7 @@ public class MainManager : MonoBehaviour
             SavedData.bestScore = m_Points;
             SavedData.nameBest = SavedData.name;
             bestScore.Actualise();
+            SavedData.SaveAll();
         }
     }
 }

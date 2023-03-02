@@ -9,6 +9,7 @@ public class BestScore : MonoBehaviour
     void Start()
     {
         bestScore = GetComponent<Text>();
+        SavedData.LoadAll();
         Actualise();
     }
 
